@@ -1,0 +1,49 @@
+<div class="header">
+
+    <div class="header__correo">
+        <h3>correo</h3>
+        <input  type="text" pInputText [(ngModel)]="modelReport.correo"/>
+    </div>
+
+    <div class="header__campouno">
+        <h3>campo uno</h3>
+        <p-dropdown [options]="listaCamposUno" placeholder="Seleccionar" (onChange)="validarCamposDos()"
+            [(ngModel)]="campo_uno" optionLabel="label" dataKey="value"></p-dropdown>
+    </div>
+
+    <div class="header__campodos" *ngIf="mostrarCampoDos" >
+        <h3>campo dos</h3>
+        <p-dropdown [options]="listaCamposDos" [(ngModel)]="campo_dos" placeholder="Seleccionar" optionLabel="label" dataKey="value"></p-dropdown>
+    </div>
+
+    <div class="button">
+        <p-button label="Submit" (onClick)="guardarModelReport()"></p-button>
+    </div>
+
+    <div class="label" *ngIf="error">
+        <label label="Submit" >{{error}}</label>
+    </div>
+
+</div>
+
+<div class="table">
+    <p-table [value]="listaModelReport">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Correo</th>
+                <th>Campo_uno</th>
+                <th>Campo_dos</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-model>
+            <tr>
+                <td>{{model.correo}}</td>
+                <td>{{model.campo_uno}}</td>
+                <td>{{model.campo_dos}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+
+

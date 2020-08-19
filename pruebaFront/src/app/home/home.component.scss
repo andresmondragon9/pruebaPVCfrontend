@@ -1,0 +1,60 @@
+body {
+    margin: 0px;
+    font-family: 'Muli', sans-serif;
+}
+
+.header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.header__correo{
+    width: 200px;
+    margin-top: 12px;
+    margin-left: 50px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.header__campouno{
+    width: 200px;
+    margin-top: 12px;
+    margin-left: 50px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.header__campodos{
+    width: 200px;
+    margin-top: 12px;
+    margin-left: 50px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+.button {
+    width: 200px;
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.table {
+    width: 1000px;
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.label {
+    width: 1000px;
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 10px;
+    padding-right: 10px;
+    color: red;
+}
