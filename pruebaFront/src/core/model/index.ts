@@ -1,2 +1,3 @@
-export * from './modelreport.model';
-export * from './listaDos.model';
+export * from './tipoDocumento.model';
+export * from './pais.model';
+export * from './persona.model';

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import {ModelReport} from '../model';
+import {Persona} from '../model';
 import { dominio } from 'src/environments/environment';
 
 @Injectable({
@@ -13,28 +13,46 @@ export class ModelReportService {
      }
 
     /**
-     * @description llamado POST al Banckend para guardar un registro en la BD
-     * @param modelResport 
+     * @description metodo GET para obtener todos las personas
      */
-    crearModel(modelResport : ModelReport) {
-        console.log('crear reporte: ', JSON.stringify(modelResport));
-        return this.http.post<HttpResponse<Object>>(dominio + "/report", JSON.stringify(modelResport),{
+    obtenerPersonas(){
+        return this.http.get(dominio + "/obtener/personas");
+    }
+
+    /**
+     * @description metodo GET para obtener la lista de Documentos
+     */
+
+    obtenerTiposDocumentos(){
+        return this.http.get(dominio + "/obtener/tipodocumentos", {
             headers: {'Content-Type': 'application/json'}
         });
     }
 
     /**
-     * @description metodo GET para obtener todos los registros 
+     * @description metodo GET para obtener la lista de Paises
      */
-    obtenerModel(){
-        return this.http.get(dominio + "/report");
+
+    obtenerPaises(){
+        return this.http.get(dominio + "/obtener/paises");
     }
 
     /**
-     * @description metodo GET para obtener la lista de campos 2
+     * @description medoto DELETE para eleminar persona de la BD
      */
+    eliminarPersona(idPersona : number){
+        console.log(idPersona)
+        return this.http.delete(dominio + "/eliminar/persona/" + idPersona);
+    }
 
-    obtenerListaDos(){
-        return this.http.get(dominio + "/listaDos");
+     /**
+     * @description llamado POST al Banckend para crear una persona  en la BD
+     * @param modelResport 
+     */
+    crearPersona(persona : Persona) {
+        console.log('crear Persona: ', JSON.stringify(persona));
+        return this.http.post<HttpResponse<Object>>(dominio + "/crear/persona", JSON.stringify(persona),{
+            headers: {'Content-Type': 'application/json'}
+        });
     }
 }

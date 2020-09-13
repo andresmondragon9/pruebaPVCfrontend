@@ -6,7 +6,7 @@ export const environment = {
   production: false
 };
 
-export const dominio = "http://localhost:8000";
+export const dominio = "http://localhost:8080/crud";
 
 /*
  * For easier debugging in development mode, you can import the following file
